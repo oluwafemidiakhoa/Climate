@@ -48,16 +48,16 @@ tf.random.set_seed(SEED)
 # -------------------------------
 
 CONFIG = {
-    'data_path': '/content/GlobalLandTemperatures_GlobalLandTemperaturesByCountry.csv',  # Update with your path
+    'data_path': 'GlobalLandTemperatures_GlobalLandTemperaturesByCountry.csv',  # Update with your path
     'vae': {
         'latent_dim': 5,
         'epochs': 50,
         'batch_size': 16
     },
     'gan': {
-        'latent_dim_gan': 100,
-        'epochs': 500,
-        'batch_size': 32
+        'latent_dim_gan': 50,
+        'epochs': 100,  # Reduced from 500 to 100 to prevent memory issues
+        'batch_size': 16  # Reduced batch size to reduce memory usage
     },
     'arima': {
         'order': (1, 1, 1),
